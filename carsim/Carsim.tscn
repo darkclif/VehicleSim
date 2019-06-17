@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://carsim/Carsim.gd" type="Script" id=1]
+[ext_resource path="res://carsim/meshes/simple_car_nowheels.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://carsim/meshes/simple_car_wheel.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://carsim/camera_handle.gd" type="Script" id=4]
+[ext_resource path="res://carsim/traction.gd" type="Script" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 0.882682, 2.28354 )
+
+[node name="Carsim" type="RigidBody"]
+gravity_scale = 0.0
+script = ExtResource( 1 )
+
+[node name="car _mesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0239725, -0.0314419, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="wheel_lf" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="mesh" type="MeshInstance" parent="wheel_lf"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927894, 0.365377, 1.63033 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="wheel_lr" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="mesh" type="MeshInstance" parent="wheel_lr"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.934717, 0.363499, -1.54662 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="wheel_rf" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="mesh" type="MeshInstance" parent="wheel_rf"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.937365, 0.365377, 1.63033 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="wheel_rr" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="mesh" type="MeshInstance" parent="wheel_rr"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.937365, 0.365377, -1.54338 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="camera_handle" type="Spatial" parent="."]
+editor/display_folded = true
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="camera_handle"]
+transform = Transform( -1, -6.03961e-14, -8.74228e-08, -6.21212e-08, 0.703613, 0.710583, 6.15118e-08, 0.710583, -0.703613, 0, 5.51863, -5.77526 )
+current = true
+
+[node name="debug_vectors" type="ImmediateGeometry" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42652, 0 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.897299, 0.144903 )
+shape = SubResource( 1 )
+

@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/simple_car_wheel.obj-479b59f2486e2800ea4e49d0965c8e24.mesh"
+
+[deps]
+
+files=[ "res://.import/simple_car_wheel.obj-479b59f2486e2800ea4e49d0965c8e24.mesh" ]
+
+source_file="res://carsim/meshes/simple_car_wheel.obj"
+dest_files=[ "res://.import/simple_car_wheel.obj-479b59f2486e2800ea4e49d0965c8e24.mesh", "res://.import/simple_car_wheel.obj-479b59f2486e2800ea4e49d0965c8e24.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

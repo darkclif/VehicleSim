@@ -1,0 +1,12 @@
+extends Spatial
+
+func _ready():
+	var s = Summator.new()
+	s.add(10)
+	s.add(20)
+	s.add(30)
+	print(s.get_total())
+	s.reset()
+
+#func _process(delta):
+#	pass
